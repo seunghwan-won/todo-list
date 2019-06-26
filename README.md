@@ -7,7 +7,8 @@
   [3. 어려웠던 점](#어려웠던-점)  
   [4. 새로 알게 된 점](#새로-알게-된-점)  
   [5. 실행 화면](#실행화면)  
-  [6. 참고](#참고)  
+  [6. 참고](#참고) 
+  [7. 리팩토링](#리팩토링)  
   
 # 기술 스택
   - Front end
@@ -47,5 +48,10 @@
 ![](https://user-images.githubusercontent.com/52232390/60170503-7f733c00-9843-11e9-89ed-62873f8eab7f.png)
 ![](https://user-images.githubusercontent.com/52232390/60170507-813cff80-9843-11e9-8510-7a330e05d1b7.png)
 
+# 리팩토링
+  - AJAX를 적용해야한다는데 나는 왜 안썻지?
+  - 중복되는 코드들 없애기
+  - 하드코딩된 부분 없애기
+  
 # 참고
 https://www.edwith.org/boostcourse-web/project/7/content/6#summary
