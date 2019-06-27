@@ -50,8 +50,8 @@
 
 # 리팩토링
   - AJAX를 적용해야한다는데 나는 왜 안썻지?
-  - 중복되는 코드들 없애기
-  - 하드코딩된 부분 없애기
+  - ~~~중복되는 코드들 없애기~~~
+  - ~~하드코딩된 부분 없애기~~
   - jsp를 el, jstl적용 해보기
 # 참고
 https://www.edwith.org/boostcourse-web/project/7/content/6#summary
