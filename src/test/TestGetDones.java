@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class TestGetDones {
     @Test
     public void dones() {
-        List<Todo> todos = TodoDao.getDones();
+        List<Todo> todos = TodoDao.getDoneList();
         assertEquals(1, todos.size());
     }
 }

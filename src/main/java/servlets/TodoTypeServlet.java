@@ -15,19 +15,14 @@ public class TodoTypeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long id = Long.parseLong(request.getParameter("id"));
         String type = request.getParameter("type");
-        if(type.equals("TODO")) {
-            TodoDao.updateType(id,type);
-        } else if(type.equals("DOING")) {
-            TodoDao.updateType(id,type);
-        }
-        List<Todo> todos = TodoDao.getTodos();
-        List<Todo> doings = TodoDao.getDoings();
-        List<Todo> dones = TodoDao.getDones();
+        TodoDao.updateType(id, type);
+        List<Todo> todos = TodoDao.getTodoList();
+        List<Todo> doings = TodoDao.getDoingList();
+        List<Todo> dones = TodoDao.getDoneList();
         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         request.setAttribute("todos", todos);
         request.setAttribute("doings", doings);
         request.setAttribute("dones", dones);
         dispatcher.forward(request, response);
-
     }
 }
