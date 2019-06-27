@@ -41,6 +41,7 @@
 # 새로 알게 된 점
   - db에 저장하다가 한글이 깨지길래 db charset을 확인 해봤는데 utf-8로 잘 되있는데 왜 계속 깨지나 생각해본 결과,
   Servlet에서 문자 인코딩이 달랐다. 그래서 문자열 인코딩 바꿔주니 잘 동작 됐다.
+  - html tag button에 class속성을 주니 인식을 못하는거 같다. 일단 id로 바꿈 
   
 # 실행화면
 ![](https://user-images.githubusercontent.com/52232390/60170484-7aae8800-9843-11e9-95f6-8cb37d01bb72.png)
