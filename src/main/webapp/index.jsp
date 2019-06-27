@@ -22,7 +22,7 @@
     <h2 class="title">TODO</h2>
     <ul id="todos">
         <%
-            List<Todo> todos = (List<Todo>) request.getAttribute("todos");
+            List<Todo> todos = (List<Todo>) request.getAttribute("todoList");
             for (Todo todo : todos) {
         %>
         <li class="todo">
@@ -44,7 +44,7 @@
     <h2 class="title">DOING</h2>
     <ul id="doings">
         <%
-            List<Todo> doings = (List<Todo>) request.getAttribute("doings");
+            List<Todo> doings = (List<Todo>) request.getAttribute("doingList");
             for (Todo todo : doings) {
         %>
         <li class="todo">
@@ -66,7 +66,7 @@
     <h2 class="title">DONE</h2>
     <ul id="dones">
         <%
-            List<Todo> dones = (List<Todo>) request.getAttribute("dones");
+            List<Todo> dones = (List<Todo>) request.getAttribute("doneList");
             for (Todo todo : dones) {
         %>
         <li class="todo">

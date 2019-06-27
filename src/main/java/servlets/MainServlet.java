@@ -13,13 +13,21 @@ import java.util.List;
 
 public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Todo> todos = TodoDao.getTodoList();
-        List<Todo> doings = TodoDao.getDoingList();
-        List<Todo> dones = TodoDao.getDoneList();
+        readData(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        readData(request, response);
+    }
+
+    private void readData(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Todo> todoList = TodoDao.getTodoList();
+        List<Todo> doingList = TodoDao.getDoingList();
+        List<Todo> doneList = TodoDao.getDoneList();
         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-        request.setAttribute("todos", todos);
-        request.setAttribute("doings", doings);
-        request.setAttribute("dones", dones);
+        request.setAttribute("todoList", todoList);
+        request.setAttribute("doingList", doingList);
+        request.setAttribute("doneList", doneList);
         dispatcher.forward(request, response);
     }
 }

@@ -17,13 +17,14 @@ public class TodoDao {
     private static final Type TODO = Type.TODO;
     private static final Type DOING = Type.DOING;
     private static final Type DONE = Type.DONE;
-
-    public static List<Todo> getTodoList() {
-        return new TodoDao().getList(TODO.getType());
-    }
+    private static final String DRIVER_NAME = "com.mysql.jdbc.Driver";
 
     public static int addTodo(String title, String name, int sequence) {
         return new TodoDao().insertTodo(title, name, sequence);
+    }
+
+    public static List<Todo> getTodoList() {
+        return new TodoDao().getList(TODO.getType());
     }
 
     public static List<Todo> getDoingList() {
@@ -42,7 +43,7 @@ public class TodoDao {
     private int changeType(Long id, String type) {
         int result = 0;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(DRIVER_NAME);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -62,7 +63,7 @@ public class TodoDao {
     private List<Todo> getList(String type) {
         List<Todo> todoList = new ArrayList<>();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(DRIVER_NAME);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -83,8 +84,9 @@ public class TodoDao {
     }
 
     private int insertTodo(String title, String name, int sequence) {
+        int result = 0;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(DRIVER_NAME);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -94,11 +96,11 @@ public class TodoDao {
             statement.setString(1, title);
             statement.setString(2, name);
             statement.setInt(3, sequence);
-            statement.executeUpdate();
+            result = statement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return 1;
+        return result;
     }
 }
