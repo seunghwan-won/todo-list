@@ -37,7 +37,8 @@ public class TodoDao {
     }
 
     public static int updateType(Long id, String type) {
-        return new TodoDao().changeType(id, type);
+        return Type.TODO.isTodoType(type) ? new TodoDao().changeType(id, Type.DOING.getType()):
+                new TodoDao().changeType(id,Type.DONE.getType());
     }
 
     private int changeType(Long id, String type) {
@@ -49,6 +50,7 @@ public class TodoDao {
         }
 
         String query = "update todo set type=? where id = ?";
+
         try (Connection connection = DriverManager.getConnection(DBURL, DBUSER, DBPASSWORD); PreparedStatement statement =
                 connection.prepareStatement(query)) {
             statement.setString(1, type);
@@ -67,7 +69,7 @@ public class TodoDao {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        String query = "select * from todo where type=?";
+        String query = "select * from todo where type=? order by regDate desc";
         try (Connection connection = DriverManager.getConnection(DBURL, DBUSER, DBPASSWORD); PreparedStatement statement =
                 connection.prepareStatement(query)) {
             statement.setString(1, type);

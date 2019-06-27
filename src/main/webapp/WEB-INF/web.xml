@@ -5,12 +5,12 @@
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
     <servlet>
-        <servlet-name>TodoFormServlet</servlet-name>
-        <servlet-class>servlets.TodoFormServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>MainServlet</servlet-name>
         <servlet-class>servlets.MainServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TodoFormServlet</servlet-name>
+        <servlet-class>servlets.TodoFormServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TodoAddServlet</servlet-name>
@@ -22,12 +22,12 @@
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>TodoFormServlet</servlet-name>
-        <url-pattern>/create</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>MainServlet</servlet-name>
         <url-pattern></url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TodoFormServlet</servlet-name>
+        <url-pattern>/create</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TodoAddServlet</servlet-name>

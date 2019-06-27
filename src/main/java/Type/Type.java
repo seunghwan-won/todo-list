@@ -12,4 +12,8 @@ public enum Type {
     public String getType() {
         return type;
     }
+
+    public boolean isTodoType(String type) {
+        return TODO.getType().equals(type);
+    }
 }

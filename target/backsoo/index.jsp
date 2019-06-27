@@ -20,10 +20,10 @@
 <aside id="blank"></aside>
 <section>
     <h2 class="title">TODO</h2>
-    <ul id="todos">
+    <ul id="todoList">
         <%
-            List<Todo> todos = (List<Todo>) request.getAttribute("todos");
-            for (Todo todo : todos) {
+            List<Todo> todoList = (List<Todo>) request.getAttribute("todoList");
+            for (Todo todo : todoList) {
         %>
         <li class="todo">
             <h4><%=todo.getTitle()%>
@@ -32,9 +32,11 @@
             </p>
             <form action="/type" method="post">
                 <input type="hidden" name="_method" value="put"/>
-                <input type="hidden" name="type" value="<%=todo.getType()%>">
                 <input type="hidden" name="id" value=<%=todo.getId()%>>
-                <button class="todo-to-doing" type="submit">-></button>
+                <input type="hidden" name="type" value="<%=todo.getType()%>">
+                <%--                <button class="todo-to-doing" type="submit">-></button>--%>
+                <button id="doing-to-done" type="submit">-></button>
+
             </form>
         </li>
         <%}%>
@@ -42,21 +44,22 @@
 </section>
 <section>
     <h2 class="title">DOING</h2>
-    <ul id="doings">
+    <ul id="doingList">
         <%
-            List<Todo> doings = (List<Todo>) request.getAttribute("doings");
-            for (Todo todo : doings) {
+            List<Todo> doingList = (List<Todo>) request.getAttribute("doingList");
+            for (Todo todo : doingList) {
         %>
         <li class="todo">
             <h4><%=todo.getTitle()%>
             </h4>
-            <p>등록날짜 : <%=todo.getRegDate().split(" ")[0]%> <%=todo.getName()%> 우선순위 <%=todo.getSequence()%>
+            <p>등록날짜 : : <%=todo.getRegDate().split(" ")[0]%> <%=todo.getName()%> 우선순위 <%=todo.getSequence()%>
             </p>
             <form action="/type" method="post">
                 <input type="hidden" name="_method" value="put"/>
-                <input type="hidden" name="type" value="<%=todo.getType()%>">
                 <input type="hidden" name="id" value=<%=todo.getId()%>>
-                <button class="todo-to-doing" type="submit">-></button>
+                <input type="hidden" name="type" value="<%=todo.getType()%>">
+                <%--                <button class="doing-to-done" type="submit">-></button>--%>
+                <button id="doing-to-done" type="submit">-></button>
             </form>
         </li>
         <%}%>
@@ -64,10 +67,10 @@
 </section>
 <section>
     <h2 class="title">DONE</h2>
-    <ul id="dones">
+    <ul id="doneList">
         <%
-            List<Todo> dones = (List<Todo>) request.getAttribute("dones");
-            for (Todo todo : dones) {
+            List<Todo> doneList = (List<Todo>) request.getAttribute("doneList");
+            for (Todo todo : doneList) {
         %>
         <li class="todo">
             <h4><%=todo.getTitle()%>
