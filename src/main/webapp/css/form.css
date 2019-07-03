@@ -1,0 +1,56 @@
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+header {
+    text-align: center;
+}
+form {
+    position: relative;
+    float: left;
+    padding: 0px;
+    left: 600px;
+}
+
+form > input {
+    width: 300px;
+    height: 30px;
+}
+
+label {
+    font-size: 25px;
+    color: #475766;
+}
+::placeholder {
+    font-size: 20px;
+    color: #475766;
+}
+
+#back {
+    position: relative;
+    float: left;
+    border: 1px solid black;
+    top: 25px;;
+}
+#submit {
+    float: left;
+    margin-right: -0.5em;
+}
+#reset {
+    float: right;
+}
+
+button {
+    background: #00AFF4;
+    width: 9.5em;
+    height: 2.7em;
+    text-align: center;
+    margin: 2.5em 2em;
+    line-height: 2em;
+    color: #fff;
+    font-size: 15px;
+}
