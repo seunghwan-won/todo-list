@@ -30,7 +30,6 @@
                     <input type="hidden" name="_method" value="put"/>
                     <input type="hidden" name="id" value="${todo.id}">
                     <input type="hidden" name="type" value="${todo.type}">
-                        <%--                <button class="todo-to-doing" type="submit">-></button>--%>
                     <button id="todo-to-doing" type="submit">-></button>
                 </form>
             </li>
@@ -50,7 +49,6 @@
                     <input type="hidden" name="_method" value="put"/>
                     <input type="hidden" name="id" value="${todo.id}">
                     <input type="hidden" name="type" value="${todo.type}">
-                        <%--                <button class="todo-to-doing" type="submit">-></button>--%>
                     <button id="doing-to-done" type="submit">-></button>
                 </form>
             </li>
