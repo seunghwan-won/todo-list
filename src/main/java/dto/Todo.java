@@ -1,5 +1,7 @@
 package dto;
 
+import java.util.Objects;
+
 public class Todo {
     private Long id;
     private String name;
@@ -86,5 +88,23 @@ public class Todo {
                 ", title='" + title + '\'' +
                 ", type='" + type + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Todo todo = (Todo) o;
+        return sequence == todo.sequence &&
+                Objects.equals(id, todo.id) &&
+                Objects.equals(name, todo.name) &&
+                Objects.equals(regDate, todo.regDate) &&
+                Objects.equals(title, todo.title) &&
+                Objects.equals(type, todo.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, regDate, sequence, title, type);
     }
 }

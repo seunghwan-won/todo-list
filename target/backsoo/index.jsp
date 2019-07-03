@@ -1,13 +1,12 @@
-<%@ page import="dto.Todo" %>
-<%@ page import="java.util.List" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/hanna.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css?after">
+    <link rel="stylesheet" type="text/css" href="css/index.css?after?">
 </head>
 
 <body>
@@ -21,64 +20,54 @@
 <section>
     <h2 class="title">TODO</h2>
     <ul id="todoList">
-        <%
-            List<Todo> todoList = (List<Todo>) request.getAttribute("todoList");
-            for (Todo todo : todoList) {
-        %>
-        <li class="todo">
-            <h4><%=todo.getTitle()%>
-            </h4>
-            <p>등록날짜 : : <%=todo.getRegDate().split(" ")[0]%> <%=todo.getName()%> 우선순위 <%=todo.getSequence()%>
-            </p>
-            <form action="/type" method="post">
-                <input type="hidden" name="_method" value="put"/>
-                <input type="hidden" name="id" value=<%=todo.getId()%>>
-                <input type="hidden" name="type" value="<%=todo.getType()%>">
-                <%--                <button class="todo-to-doing" type="submit">-></button>--%>
-                <button id="doing-to-done" type="submit">-></button>
-
-            </form>
-        </li>
-        <%}%>
+        <c:forEach items="${todoList}" var="todo">
+            <li class="todo">
+                <h4>${todo.title}
+                </h4>
+                <p>등록날짜 : : ${todo.regDate.split(" ")[0]}, ${todo.name}, 우선순위 ${todo.sequence}
+                </p>
+                <form action="/type" method="post">
+                    <input type="hidden" name="_method" value="put"/>
+                    <input type="hidden" name="id" value="${todo.id}">
+                    <input type="hidden" name="type" value="${todo.type}">
+                        <%--                <button class="todo-to-doing" type="submit">-></button>--%>
+                    <button id="todo-to-doing" type="submit">-></button>
+                </form>
+            </li>
+        </c:forEach>
     </ul>
 </section>
 <section>
     <h2 class="title">DOING</h2>
     <ul id="doingList">
-        <%
-            List<Todo> doingList = (List<Todo>) request.getAttribute("doingList");
-            for (Todo todo : doingList) {
-        %>
-        <li class="todo">
-            <h4><%=todo.getTitle()%>
-            </h4>
-            <p>등록날짜 : : <%=todo.getRegDate().split(" ")[0]%> <%=todo.getName()%> 우선순위 <%=todo.getSequence()%>
-            </p>
-            <form action="/type" method="post">
-                <input type="hidden" name="_method" value="put"/>
-                <input type="hidden" name="id" value=<%=todo.getId()%>>
-                <input type="hidden" name="type" value="<%=todo.getType()%>">
-                <%--                <button class="doing-to-done" type="submit">-></button>--%>
-                <button id="doing-to-done" type="submit">-></button>
-            </form>
-        </li>
-        <%}%>
+        <c:forEach items="${doingList}" var="todo">
+            <li class="todo">
+                <h4>${todo.title}
+                </h4>
+                <p>등록날짜 : : ${todo.regDate.split(" ")[0]}, ${todo.name}, 우선순위 ${todo.sequence}
+                </p>
+                <form action="/type" method="post">
+                    <input type="hidden" name="_method" value="put"/>
+                    <input type="hidden" name="id" value="${todo.id}">
+                    <input type="hidden" name="type" value="${todo.type}">
+                        <%--                <button class="todo-to-doing" type="submit">-></button>--%>
+                    <button id="doing-to-done" type="submit">-></button>
+                </form>
+            </li>
+        </c:forEach>
     </ul>
 </section>
 <section>
     <h2 class="title">DONE</h2>
     <ul id="doneList">
-        <%
-            List<Todo> doneList = (List<Todo>) request.getAttribute("doneList");
-            for (Todo todo : doneList) {
-        %>
-        <li class="todo">
-            <h4><%=todo.getTitle()%>
-            </h4>
-            <p>등록날짜 : : <%=todo.getRegDate().split(" ")[0]%> <%=todo.getName()%> 우선순위 <%=todo.getSequence()%>
-            </p>
-        </li>
-        <%}%>
+        <c:forEach items="${doneList}" var="todo">
+            <li class="todo">
+                <h4>${todo.title}
+                </h4>
+                <p>등록날짜 : : ${todo.regDate.split(" ")[0]}, ${todo.name}, 우선순위 ${todo.sequence}
+                </p>
+            </li>
+        </c:forEach>
     </ul>
 </section>
 
