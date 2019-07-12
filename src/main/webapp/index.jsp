@@ -24,14 +24,11 @@
             <li class="todo">
                 <h4>${todo.title}
                 </h4>
-                <p>등록날짜 : : ${todo.regDate.split(" ")[0]}, ${todo.name}, 우선순위 ${todo.sequence}
+                <p>등록날짜 : ${todo.regDate.split(" ")[0]}, 작성자 : ${todo.name}, 우선순위 : ${todo.sequence}
                 </p>
-                <form action="/type" method="post">
-                    <input type="hidden" name="_method" value="put"/>
-                    <input type="hidden" name="id" value="${todo.id}">
-                    <input type="hidden" name="type" value="${todo.type}">
-                    <button id="todo-to-doing" type="submit">-></button>
-                </form>
+                <label class="id"> id : ${todo.id}</label>
+                <label> type : ${todo.type} </label>
+                <button class="todo-to-doing">-></button>
             </li>
         </c:forEach>
     </ul>
@@ -40,17 +37,14 @@
     <h2 class="title">DOING</h2>
     <ul id="doingList">
         <c:forEach items="${doingList}" var="todo">
-            <li class="todo">
+            <li class="doing">
                 <h4>${todo.title}
                 </h4>
-                <p>등록날짜 : : ${todo.regDate.split(" ")[0]}, ${todo.name}, 우선순위 ${todo.sequence}
+                <p>등록날짜 : ${todo.regDate.split(" ")[0]}, 작성자 : ${todo.name}, 우선순위 : ${todo.sequence}
                 </p>
-                <form action="/type" method="post">
-                    <input type="hidden" name="_method" value="put"/>
-                    <input type="hidden" name="id" value="${todo.id}">
-                    <input type="hidden" name="type" value="${todo.type}">
-                    <button id="doing-to-done" type="submit">-></button>
-                </form>
+                <label class="id"> id : ${todo.id}</label>
+                <label> type : ${todo.type} </label>
+                <button class="doing-to-done">-></button>
             </li>
         </c:forEach>
     </ul>
@@ -59,19 +53,47 @@
     <h2 class="title">DONE</h2>
     <ul id="doneList">
         <c:forEach items="${doneList}" var="todo">
-            <li class="todo">
+            <li class="done">
                 <h4>${todo.title}
                 </h4>
-                <p>등록날짜 : : ${todo.regDate.split(" ")[0]}, ${todo.name}, 우선순위 ${todo.sequence}
+                <p>등록날짜 : ${todo.regDate.split(" ")[0]}, 작성자 : ${todo.name}, 우선순위 : ${todo.sequence}
                 </p>
             </li>
         </c:forEach>
     </ul>
 </section>
 
-</body>
-<script type="text/javascript" src="js/index.js">
-
+<script type="todo-Template" id="todoTemplate">
+    <li class="todo">
+        <h4>{{title}}</h4>
+        <p>등록 날짜 : {{regDate}}, 작성자 : {{name}}, 우선순위 : {{sequence}}</p>
+        <label class="id"> id : {{id}}</label>
+        <label> type : {{type}} </label>
+        <button class="todo-to-doing">-></button>
+    </li>
+</script>
+<script type="doing-Template" id="doingTemplate">
+    <li class="doing">
+        <h4>{{title}}</h4>
+        <p>등록 날짜 : {{regDate}}, 작성자 : {{name}}, 우선순위 : {{sequence}}</p>
+        <button class="doing-to-done">-></button>
+        <label class="id"> id : {{id}}</label>
+        <label> type : {{type}} </label>
+    </li>
 </script>
 
+<script type="done-Template" id="doneTemplate">
+    <li class="done">
+        <h4>{{title}}</h4>
+        <p>등록 날짜 : {{regDate}}, 작성자 : {{name}}, 우선순위 : {{sequence}}</p>
+        <label class="id"> id : {{id}}</label>
+        <label> type : {{type}} </label>
+    </li>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+
+</body>
 </html>
