@@ -1,74 +1,83 @@
-//
-// let todoTemplate = document.querySelector("#todoTemplate").innerText;
-// let todoBindTemplate = Handlebars.compile(todoTemplate);
-var template = {
+let template = {
     createDoingTemplate() {
-
+        let doingTemplate = document.querySelector("#doingTemplate").innerText;
+        return Handlebars.compile(doingTemplate);
     },
-    getTemplate() {
-
+    createDoneTemplate() {
+        let doneTemplate = document.querySelector("#doneTemplate").innerText;
+        return Handlebars.compile(doneTemplate);
     }
 }
-let doingTemplate = document.querySelector("#doingTemplate").innerText;
-let doingBindTemplate = Handlebars.compile(doingTemplate);
 
-let doneTemplate = document.querySelector("#doneTemplate").innerText;
-let doneBindTemplate = Handlebars.compile(doneTemplate);
+let transObj = {
+    obj: {},
+    createObject(data, type, contents) {
+        this.obj = {
+            id: data.querySelector(".id").innerHTML.split(":")[1].trim(),
+            type: type,
+            title: data.querySelector("h4").innerText.trim(),
+            regDate: splitString(contents[0]).trim(),
+            name: splitString(contents[1]).trim(),
+            sequence: splitString(contents[2]).trim()
+        }
+        return this.obj;
+    }
+}
 
 let todoList = document.querySelector("#todoList");
 let doingList = document.querySelector("#doingList");
 let doneList = document.querySelector("#doneList");
+let BUTTON = "BUTTON";
+let TODO = "TODO";
+let DOING = "DOING";
+let DONE = "DONE";
 
-todoList.addEventListener("click", function (v) {
-    if(event.target.tagName === "BUTTON") {
+
+todoList.addEventListener("click", () => {
+    if (isButton(event)) {
         let data = event.target.parentNode;
-        let todoId = data.querySelector(".id").innerHTML.split(":")[1];
-        let todoTitle = data.querySelector("h4").innerText;
-        let contents = data.querySelector("p").innerText.split(",");
-        let todoRegDate = splitString(contents[0]);
-        let todoName = splitString(contents[1]);
-        let todoSequence = splitString(contents[2]);
-        let doingObj = {
-            id: todoId.trim(),
-            type: "TODO",
-            title: todoTitle.trim(),
-            regDate: todoRegDate.trim(),
-            name: todoName.trim(),
-            sequence: todoSequence.trim()
-        }
-        doingList.innerHTML += doingBindTemplate(doingObj);
+        let contents = getContents(data);
+        let todoObj = transObj.createObject(data, DOING, contents)
+        let doingTemplate = template.createDoingTemplate();
+        doingList.innerHTML += doingTemplate(todoObj);
         data.remove();
-        let ajax = new XMLHttpRequest();
-        ajax.open("POST", "http://localhost:8080"+"/type?id="+doingObj.id +"&type=TODO", true);
-        ajax.send();
+        let url = makeUrl(todoObj.id, TODO);
+        sendDataByPost(url);
     }
 
 });
 
-doingList.addEventListener("click", function (v) {
-    let data = event.target.parentNode;
-    let todoId = data.querySelector(".id").innerHTML.split(":")[1];
-    let todoTitle = data.querySelector("h4").innerText;
-    let contents = data.querySelector("p").innerText.split(",");
-    let todoRegDate = splitString(contents[0]);
-    let todoName = splitString(contents[1]);
-    let todoSequence = splitString(contents[2]);
-    let doingObj = {
-        id: todoId.trim(),
-        type: "DOING",
-        title: todoTitle.trim(),
-        regDate: todoRegDate.trim(),
-        name: todoName.trim(),
-        sequence: todoSequence.trim()
+doingList.addEventListener("click", () => {
+    if (isButton(event)) {
+        let data = event.target.parentNode;
+        let contents = getContents(data);
+        let doingObj = transObj.createObject(data, DONE, contents)
+        let doneTemplate = template.createDoneTemplate();
+        doneList.innerHTML += doneTemplate(doingObj);
+        data.remove();
+        let url = makeUrl(doingObj.id, DOING);
+        sendDataByPost(url);
     }
-    doneList.innerHTML += doneBindTemplate(doingObj);
-    data.remove();
-    let ajax = new XMLHttpRequest();
-    ajax.open("POST", "http://localhost:8080"+"/type?id="+doingObj.id +"&type=DOING", true);
-    ajax.send();
 })
 
+function getContents(data) {
+    return data.querySelector("p").innerText.split(",");
+}
 
 function splitString(str) {
     return str.split(":")[1];
+}
+
+function makeUrl(id, type) {
+    return "http://localhost:8080" + "/type?id=" + id + "&type=" + type;
+}
+
+function sendDataByPost(url) {
+    let ajax = new XMLHttpRequest();
+    ajax.open("POST", url, true);
+    ajax.send();
+}
+
+function isButton(event) {
+    return event.target.tagName === BUTTON;
 }

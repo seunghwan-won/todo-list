@@ -24,10 +24,10 @@
             <li class="todo">
                 <h4>${todo.title}
                 </h4>
-                <p>등록날짜 : ${todo.regDate.split(" ")[0]}, 작성자 : ${todo.name}, 우선순위 : ${todo.sequence}
+                <p>등록 날짜 : ${todo.regDate.split(" ")[0]}, 작성자 : ${todo.name}, 우선순위 : ${todo.sequence}
                 </p>
                 <label class="id"> id : ${todo.id}</label>
-                <label> type : ${todo.type} </label>
+                <label class="type"> type : ${todo.type} </label>
                 <button class="todo-to-doing">-></button>
             </li>
         </c:forEach>
@@ -40,10 +40,10 @@
             <li class="doing">
                 <h4>${todo.title}
                 </h4>
-                <p>등록날짜 : ${todo.regDate.split(" ")[0]}, 작성자 : ${todo.name}, 우선순위 : ${todo.sequence}
+                <p>등록 날짜 : ${todo.regDate.split(" ")[0]}, 작성자 : ${todo.name}, 우선순위 : ${todo.sequence}
                 </p>
                 <label class="id"> id : ${todo.id}</label>
-                <label> type : ${todo.type} </label>
+                <label class="type"> type : ${todo.type} </label>
                 <button class="doing-to-done">-></button>
             </li>
         </c:forEach>
@@ -56,29 +56,20 @@
             <li class="done">
                 <h4>${todo.title}
                 </h4>
-                <p>등록날짜 : ${todo.regDate.split(" ")[0]}, 작성자 : ${todo.name}, 우선순위 : ${todo.sequence}
+                <p>등록 날짜 : ${todo.regDate.split(" ")[0]}, 작성자 : ${todo.name}, 우선순위 : ${todo.sequence}
                 </p>
             </li>
         </c:forEach>
     </ul>
 </section>
 
-<script type="todo-Template" id="todoTemplate">
-    <li class="todo">
-        <h4>{{title}}</h4>
-        <p>등록 날짜 : {{regDate}}, 작성자 : {{name}}, 우선순위 : {{sequence}}</p>
-        <label class="id"> id : {{id}}</label>
-        <label> type : {{type}} </label>
-        <button class="todo-to-doing">-></button>
-    </li>
-</script>
 <script type="doing-Template" id="doingTemplate">
     <li class="doing">
         <h4>{{title}}</h4>
         <p>등록 날짜 : {{regDate}}, 작성자 : {{name}}, 우선순위 : {{sequence}}</p>
         <button class="doing-to-done">-></button>
         <label class="id"> id : {{id}}</label>
-        <label> type : {{type}} </label>
+        <label class="type"> type : {{type}} </label>
     </li>
 </script>
 
@@ -87,7 +78,7 @@
         <h4>{{title}}</h4>
         <p>등록 날짜 : {{regDate}}, 작성자 : {{name}}, 우선순위 : {{sequence}}</p>
         <label class="id"> id : {{id}}</label>
-        <label> type : {{type}} </label>
+        <label class="type"> type : {{type}} </label>
     </li>
 </script>
 
