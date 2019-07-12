@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-<<<<<<< HEAD
-    <bytecodeTargetLevel>
-      <module name="todo-list" target="1.8" />
-    </bytecodeTargetLevel>
-=======
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="backsoo" />
         <module name="todo-list" />
       </profile>
     </annotationProcessing>
->>>>>>> 4a7aaf996a9cd42a71419e8edcd96b4149acae99
   </component>
 </project>
