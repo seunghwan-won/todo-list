@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # todo-list
 
 # 목차
@@ -56,3 +57,6 @@
   - ~~jsp를 el, jstl적용 해보기~~
 # 참고
 https://www.edwith.org/boostcourse-web/project/7/content/6#summary
+=======
+# todo-list
+>>>>>>> 4a7aaf996a9cd42a71419e8edcd96b4149acae99
