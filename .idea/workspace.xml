@@ -47,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+            <state relative-caret-position="165">
+              <caret line="11" column="29" selection-start-line="11" selection-end-line="12" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -422,7 +422,7 @@
       <workItem from="1561611494786" duration="14649000" />
       <workItem from="1562146031975" duration="2091000" />
       <workItem from="1562149654685" duration="19000" />
-      <workItem from="1562896602137" duration="10269000" />
+      <workItem from="1562896602137" duration="10526000" />
     </task>
     <task id="LOCAL-00001" summary="update method TodoDao().getList(String type), TodoDao.updateType(String type)">
       <created>1561613292554</created>
@@ -445,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561615410635</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add ajax feature">
+      <created>1562917385827</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1562917385827</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -481,13 +488,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69345000" />
+    <option name="totallyTimeSpent" value="69602000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.494" visible="true" weight="0.2739628" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.494" visible="true" weight="0.2739628" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" sideWeight="0.504" side_tool="true" weight="0.2533137" />
       <window_info id="Designer" order="3" />
@@ -495,7 +502,7 @@
       <window_info id="Favorites" order="5" sideWeight="0.506" side_tool="true" weight="0.26730487" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32771084" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4985694" visible="true" weight="0.32771084" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4985694" visible="true" weight="0.32771084" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -523,7 +530,8 @@
     <MESSAGE value="update method TodoDao().getList(String type), TodoDao.updateType(String type)" />
     <MESSAGE value="add    Enum Type&#10;update method TodoDao().getList(String type), TodoDao.updateType(String type)" />
     <MESSAGE value="remove duplicate code" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove duplicate code" />
+    <MESSAGE value="add ajax feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ajax feature" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -749,8 +757,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        <state relative-caret-position="165">
+          <caret line="11" column="29" selection-start-line="11" selection-end-line="12" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

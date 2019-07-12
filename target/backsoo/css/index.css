@@ -3,6 +3,9 @@ html, body {
     height: 100%;
     font-family: 'Hanna', sans-serif;
 }
+label {
+    visibility: hidden
+}
 a {
     text-decoration: none;
     color: #fff;
@@ -72,20 +75,20 @@ section > ul li {
     height: 100px;
     margin: 2em -2.5em;
 }
-.todo {
+.todo, .doing, .done {
     position: relative;
     overflow: scroll;
     line-height: 200%;
 }
 
-.todo h4 {
+.todo h4, .doing h4, .done h4 {
     position: absolute;
     margin: 0px;
     padding: 0px;
     top: 10px;
     left: 20px;
 }
-.todo p {
+.todo p, .doing p, .done p {
     position: absolute;
     margin: 0px;
     padding: 0px;
