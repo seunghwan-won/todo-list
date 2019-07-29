@@ -1,3 +1,4 @@
+
 # todo-list
 
 # 목차
@@ -44,10 +45,11 @@
   - html tag button에 class속성을 주니 인식을 못하는거 같다. 일단 id로 바꿈 
 
 # 실행화면
-![](https://user-images.githubusercontent.com/52232390/60170484-7aae8800-9843-11e9-95f6-8cb37d01bb72.png)
+![](https://user-images.githubusercontent.com/52232390/62026791-ef942980-b216-11e9-8cf7-53160472ccc9.gif)
+<!--![](https://user-images.githubusercontent.com/52232390/60170484-7aae8800-9843-11e9-95f6-8cb37d01bb72.png)
 ![](https://user-images.githubusercontent.com/52232390/60170490-7c784b80-9843-11e9-8224-23d3b0923279.png)
 ![](https://user-images.githubusercontent.com/52232390/60170503-7f733c00-9843-11e9-89ed-62873f8eab7f.png)
-![](https://user-images.githubusercontent.com/52232390/60170507-813cff80-9843-11e9-8510-7a330e05d1b7.png)
+![](https://user-images.githubusercontent.com/52232390/60170507-813cff80-9843-11e9-8510-7a330e05d1b7.png)-->
 
 # 리팩토링
   - ~~AJAX를 적용해야한다는데 나는 왜 안썻지?~~
